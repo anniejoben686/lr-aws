@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loan Approval Predictor</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(to right,#667eea,#764ba2);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:12px;
+width:380px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+background:#4CAF50;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#45a049;
+}
+
+.result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🏦 Loan Approval Prediction</h2>
+
+<form action="/predict" method="post">
+
+<input type="number" name="income"
+placeholder="Monthly Income"
+min="1000"
+max="1000000"
+required>
+
+<input type="number" name="credit"
+placeholder="Credit Score"
+min="300"
+max="900"
+required>
+
+<br>
+
+<button type="submit">Predict</button>
+
+</form>
+
+<div class="result">
+{{ prediction_text }}
+</div>
+
+</div>
+
+</body>
+</html>
